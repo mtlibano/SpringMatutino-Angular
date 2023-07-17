@@ -1,0 +1,32 @@
+<div class="container">
+    <div class="form">
+        <h1>Cadastrar</h1>
+        <div class="inputBox">
+            <input type="text" id="name" #inputName>
+            <span>Nome</span>
+        </div>
+        <div class="inputBox">
+            <input type="email" id="email" #inputEmail>
+            <span>Email</span>
+        </div>
+        <div class="inputBox">
+            <input type="password" id="password" #inputPassword>
+            <span>Senha</span>
+        </div>
+
+        <div class="radioBox">
+            <div>
+                <input type="radio" id="adm" name="radio" value="ADMIN,USER" #inputAdm checked>
+                <label for="adm">ADM</label>
+            </div>
+            <div>
+                <input type="radio" id="user" name="radio" value="USER" #inputUser>
+                <label for="user">User</label>
+            </div>          
+        </div>
+
+        <button type="submit">Salvar</button>
+        <button (click)="getUserName(inputName.value)">Buscar</button>
+
+    </div>
+</div>

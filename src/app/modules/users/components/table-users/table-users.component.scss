@@ -1,0 +1,35 @@
+.container table {
+    margin-top: 60px;
+    width: 280px;
+    border-collapse: collapse;
+    line-height: 1.8;
+}
+
+.titulo td {
+    padding: 10px;
+    background-color: #f2f2f2;
+    font-weight: bold;
+    text-align: center;
+}
+
+.dados td {
+    padding: 10px;
+}
+
+.container table .dados td:nth-child(odd) {
+    background-color: #f9f9f9;
+}
+
+.td-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 28px;
+}
+
+button {
+    width: 18px;
+    height: 18px;
+    background: none;
+    border: none;
+}

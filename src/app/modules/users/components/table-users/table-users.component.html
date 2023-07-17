@@ -1,0 +1,19 @@
+<div class="container">
+    <table>
+        <tr class="titulo">
+            <td>Nome</td>
+            <td>Email</td>
+            <td>Permissões</td>
+            <td>Ações</td>
+        </tr>
+        <tr class="dados" *ngFor="let user of list; let i = index">
+            <td>{{user.name}}</td>
+            <td>{{user.email}}</td>
+            <td>{{user.roles}}</td>
+            <td class="td-btn">
+                <button>Up</button>
+                <button>Del</button>
+            </td>
+        </tr>
+    </table>
+</div>
