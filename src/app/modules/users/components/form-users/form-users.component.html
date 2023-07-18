@@ -4,6 +4,9 @@
         <div class="inputBox">
             <input type="text" id="name" #inputName>
             <span>Nome</span>
+            <button class="btnSearch" (click)="getUserName(inputName.value)">
+                <img src="../../../../../assets/icons/search-icon.svg" alt="" />
+            </button>
         </div>
         <div class="inputBox">
             <input type="email" id="email" #inputEmail>
@@ -26,7 +29,7 @@
         </div>
 
         <button type="submit">Salvar</button>
-        <button (click)="getUserName(inputName.value)">Buscar</button>
+        
 
     </div>
 </div>
