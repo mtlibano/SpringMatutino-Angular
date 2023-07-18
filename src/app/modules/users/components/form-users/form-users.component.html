@@ -2,33 +2,33 @@
     <div class="form">
         <h1>Cadastrar</h1>
         <div class="inputBox">
-            <input type="text" id="name" #inputName>
+            <input type="text" id="name" [(ngModel)]="userSelected.name" #inputName>
             <span>Nome</span>
             <button class="btnSearch" (click)="getUserName(inputName.value)">
                 <img src="../../../../../assets/icons/search-icon.svg" alt="" />
             </button>
         </div>
         <div class="inputBox">
-            <input type="email" id="email" #inputEmail>
+            <input type="email" id="email" [(ngModel)]="userSelected.email" #inputEmail>
             <span>Email</span>
         </div>
         <div class="inputBox">
-            <input type="password" id="password" #inputPassword>
+            <input type="password" id="password" [(ngModel)]="userSelected.password" #inputPassword>
             <span>Senha</span>
         </div>
 
         <div class="radioBox">
             <div>
-                <input type="radio" id="adm" name="radio" value="ADMIN,USER" #inputAdm checked>
+                <input type="radio" id="adm" name="radio" [(ngModel)]="userSelected.roles" value="ADMIN,USER" #inputAdm checked>
                 <label for="adm">ADM</label>
             </div>
             <div>
-                <input type="radio" id="user" name="radio" value="USER" #inputUser>
+                <input type="radio" id="user" name="radio" [(ngModel)]="userSelected.roles" value="USER" #inputUser>
                 <label for="user">User</label>
             </div>          
         </div>
 
-        <button type="submit">Salvar</button>
+        <button (click)="createUser()">Salvar</button>
         
 
     </div>

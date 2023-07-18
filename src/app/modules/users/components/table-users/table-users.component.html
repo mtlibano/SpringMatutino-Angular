@@ -11,8 +11,8 @@
             <td>{{user.email}}</td>
             <td>{{user.roles}}</td>
             <td class="td-btn">
-                <button>Up</button>
-                <button>Del</button>
+                <button (click)="getUserForm(user)">Up</button>
+                <button (click)="delete(user)" >Del</button>
             </td>
         </tr>
     </table>

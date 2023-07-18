@@ -17,8 +17,20 @@ export class TableUsersComponent implements OnInit {
       this.list = data;
     });
 
-    this.service.emitEvent.subscribe((user) => {
-      this.list = user;
+    // this.service.emitEvent.subscribe((user) => {
+    //   this.list = user;
+    // });
+  }
+
+  getUserForm(user: User) {
+    this.service.getUserForm(user);
+  }
+
+  delete(user: User) {
+    this.service.delete(user).subscribe(() => {
+      this.service.getUsers().subscribe((data) => {
+        this.list = data;
+      });
     });
   }
 }
