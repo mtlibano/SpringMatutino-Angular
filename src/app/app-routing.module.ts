@@ -5,6 +5,7 @@ import { UsersComponent } from './modules/users/components/users/users.component
 import { PaisComponent } from './modules/pais/components/pais/pais.component';
 import { EquipeComponent } from './modules/equipe/components/equipe/equipe.component';
 import { CampeonatoComponent } from './modules/campeonato/components/campeonato/campeonato.component';
+import { PistaComponent } from './modules/pista/components/pista/pista.component';
 
 const routes: Routes = [
   { path: '', component: HomePageComponent },
@@ -12,6 +13,7 @@ const routes: Routes = [
   { path: 'pais', component: PaisComponent },
   { path: 'equipe', component: EquipeComponent },
   { path: 'campeonato', component: CampeonatoComponent },
+  { path: 'pista', component: PistaComponent },
 ];
 
 @NgModule({

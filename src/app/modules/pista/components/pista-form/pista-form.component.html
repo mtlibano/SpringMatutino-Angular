@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="form">
+        <h1>Pista</h1>
+        <div class="inputBox">
+            <input type="number" id="tamanho" [(ngModel)]="pistaSelected.tamanho" #inputTamanho>            
+            <span>Tamanho</span>
+            <button class="menu" (click)="toggleMenu()">
+                <img src="../../../../../assets/icons/filter-icon.svg" alt="" />
+            </button>
+            <div class="menu-options" [ngClass]="{ 'open': isMenuOpen }">
+                <button class="option">Opção 1</button>
+                <button class="option">Opção 2</button>
+              </div>
+            <!-- <button class="btnSearch" (click)="getByTamanho(inputTamanho.value)">
+                <img src="../../../../../assets/icons/search-icon.svg" alt="" />
+            </button> -->
+        </div>
+        <div class="inputBox">
+            <select id="paises" [(ngModel)]="pistaSelected.pais">
+                <option *ngFor="let pais of list" [ngValue]="pais" #inputPais>
+                  {{ pais.name }}
+                </option>
+            </select>
+            <span>País</span>
+            <button class="btnSearch" (click)="getByPais()">
+                <img src="../../../../../assets/icons/search-icon.svg" alt="" />
+            </button>
+        </div>
+
+        <button class="btnSalvar" (click)="createPista()">Salvar</button>        
+
+    </div>
+</div>

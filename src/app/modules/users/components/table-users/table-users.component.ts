@@ -28,7 +28,7 @@ export class TableUsersComponent implements OnInit {
 
   delete(user: User) {
     this.service.delete(user).subscribe(() => {
-      this.service.listAll().subscribe((data) => {
+      this.service.listAll(this.token).subscribe((data) => {
         this.list = data;
       });
     });

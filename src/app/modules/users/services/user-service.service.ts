@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, Subject, of } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
 import { User } from '../models/user';
+import { GlobalService } from '../../../global.service';
 
 @Injectable({
   providedIn: 'root',
@@ -19,7 +20,12 @@ export class UserServiceService {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
   };
 
-  constructor(private http: HttpClient) {}
+  private httpOptions2 = {
+    headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
+    responseType: 'text' as 'json',
+  };
+
+  constructor(private http: HttpClient, private globalService: GlobalService) {}
 
   insert(user: User): Observable<User> {
     return this.http
@@ -50,8 +56,14 @@ export class UserServiceService {
   }
 
   listAll(): Observable<User[]> {
+    let httpOptions3 = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        Authorization: token,
+      }),
+    };
     this.http
-      .get<User[]>(this.urlBase)
+      .get<User[]>(this.urlBase, httpOptions3)
       .subscribe((users) => this.usersSubject.next(users));
     return this.usersSubject.asObservable();
   }

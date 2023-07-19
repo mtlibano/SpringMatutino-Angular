@@ -10,6 +10,7 @@ import { MenuModule } from './modules/menu/menu.module';
 import { PaisModule } from './modules/pais/pais.module';
 import { EquipeModule } from './modules/equipe/equipe.module';
 import { CampeonatoModule } from './modules/campeonato/campeonato.module';
+import { PistaModule } from './modules/pista/pista.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -22,6 +23,7 @@ import { CampeonatoModule } from './modules/campeonato/campeonato.module';
     PaisModule,
     EquipeModule,
     CampeonatoModule,
+    PistaModule,
     MenuModule,
   ],
   providers: [],
