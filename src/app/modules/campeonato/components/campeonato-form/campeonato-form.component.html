@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="form">
+        <h1>Campeonato</h1>
+        <div class="inputBox">
+            <input type="text" id="descricao" [(ngModel)]="campeonatoSelected.descricao" #inputName>            
+            <span>Nome</span>
+            <button class="btnSearch" (click)="getByDescription(inputName.value)">
+                <img src="../../../../../assets/icons/search-icon.svg" alt="" />
+            </button>
+        </div>
+        <div class="inputBox">
+            <input type="number" id="ano" [(ngModel)]="campeonatoSelected.ano" #inputAno>            
+            <span>Ano</span>
+            <button class="btnSearch" (click)="getByAno(inputAno.value)">
+                <img src="../../../../../assets/icons/search-icon.svg" alt="" />
+            </button>
+        </div>
+
+        <button (click)="createCampeonato()">Salvar</button>        
+
+    </div>
+</div>

@@ -1,0 +1,15 @@
+<div class="container">
+    <table>
+        <tr class="titulo">
+            <td>Nome</td>
+            <td>Ações</td>
+        </tr>
+        <tr class="dados" *ngFor="let equipe of list">            
+            <td>{{equipe.name}}</td>
+            <td class="td-btn">
+                <button (click)="getEquipeForm(equipe)">Up</button>
+                <button (click)="delete(equipe)">Del</button>
+            </td>
+        </tr>
+    </table>
+</div>

@@ -26,7 +26,7 @@ export class UserServiceService {
       .post<User>(this.urlBase, JSON.stringify(user), this.httpOptions)
       .pipe(
         tap(() => {
-          this.getUsers();
+          this.listAll();
         })
       );
   }
@@ -40,7 +40,7 @@ export class UserServiceService {
       )
       .pipe(
         tap(() => {
-          this.getUsers();
+          this.listAll();
         })
       );
   }
@@ -49,7 +49,7 @@ export class UserServiceService {
     return this.http.delete<void>(`${this.urlBase}/${user.id}`);
   }
 
-  getUsers(): Observable<User[]> {
+  listAll(): Observable<User[]> {
     this.http
       .get<User[]>(this.urlBase)
       .subscribe((users) => this.usersSubject.next(users));

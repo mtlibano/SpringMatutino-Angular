@@ -1,0 +1,46 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: fit-content;
+    border-bottom: solid 1px #778DA9;
+}
+
+h1 {
+    display: flex;
+    color: #1B263B;
+    font-size: 16px;
+    font-weight: bold;
+    justify-content: center;
+    margin: 0px;
+}
+
+.left {
+    width: 30%;
+}
+
+.right {
+    display: flex;
+    width: 70%;
+}
+
+a:link,
+a:visited {
+    color: black;
+    padding: 15px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+.linkSelected {
+    font-weight: bold;
+}
+
+a:hover,
+a:active {
+    background-color: #415A77;
+    color: #E0E1DD;
+}

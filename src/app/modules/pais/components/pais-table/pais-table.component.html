@@ -1,1 +1,15 @@
-<p>pais-table works!</p>
+<div class="container">
+    <table>
+        <tr class="titulo">
+            <td>Nome</td>
+            <td>Ações</td>
+        </tr>
+        <tr class="dados" *ngFor="let pais of list">            
+            <td>{{pais.name}}</td>
+            <td class="td-btn">
+                <button (click)="getPaisForm(pais)">Up</button>
+                <button (click)="delete(pais)">Del</button>
+            </td>
+        </tr>
+    </table>
+</div>

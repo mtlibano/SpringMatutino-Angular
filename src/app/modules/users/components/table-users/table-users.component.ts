@@ -13,7 +13,7 @@ export class TableUsersComponent implements OnInit {
   constructor(private service: UserServiceService) {}
 
   ngOnInit(): void {
-    this.service.getUsers().subscribe((data) => {
+    this.service.listAll().subscribe((data) => {
       this.list = data;
     });
 
@@ -28,7 +28,7 @@ export class TableUsersComponent implements OnInit {
 
   delete(user: User) {
     this.service.delete(user).subscribe(() => {
-      this.service.getUsers().subscribe((data) => {
+      this.service.listAll().subscribe((data) => {
         this.list = data;
       });
     });

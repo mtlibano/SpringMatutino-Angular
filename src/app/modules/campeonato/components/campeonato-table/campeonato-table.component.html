@@ -1,0 +1,17 @@
+<div class="container">
+    <table>
+        <tr class="titulo">
+            <td>Nome</td>
+            <td>Ano</td>
+            <td>Ações</td>
+        </tr>
+        <tr class="dados" *ngFor="let campeonato of list">            
+            <td>{{campeonato.descricao}}</td>
+            <td>{{campeonato.ano}}</td>
+            <td class="td-btn">
+                <button (click)="getCampeonatoForm(campeonato)">Up</button>
+                <button (click)="delete(campeonato)">Del</button>
+            </td>
+        </tr>
+    </table>
+</div>
