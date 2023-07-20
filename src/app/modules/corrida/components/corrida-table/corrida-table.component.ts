@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Corrida } from '../../models/corrida';
 import { CorridaService } from '../../services/corrida.service';
+import { CorridaDto } from '../../models/corrida-dto';
 
 @Component({
   selector: 'app-corrida-table',
@@ -8,7 +8,7 @@ import { CorridaService } from '../../services/corrida.service';
   styleUrls: ['./corrida-table.component.scss'],
 })
 export class CorridaTableComponent implements OnInit {
-  list: Corrida[] = [];
+  list: CorridaDto[] = [];
 
   constructor(private service: CorridaService) {}
 
@@ -18,11 +18,11 @@ export class CorridaTableComponent implements OnInit {
     });
   }
 
-  getCorridaForm(corrida: Corrida) {
+  getCorridaForm(corrida: CorridaDto) {
     this.service.getCorridaForm(corrida);
   }
 
-  delete(corrida: Corrida) {
+  delete(corrida: CorridaDto) {
     this.service.delete(corrida).subscribe(() => {
       this.service.listAll().subscribe((data) => {
         this.list = data;

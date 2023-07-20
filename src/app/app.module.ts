@@ -14,6 +14,7 @@ import { PistaModule } from './modules/pista/pista.module';
 import { PilotoModule } from './modules/piloto/piloto.module';
 import { CorridaModule } from './modules/corrida/corrida.module';
 import { LoginModule } from './modules/login/login.module';
+import { PilotoCorridaModule } from './modules/piloto-corrida/piloto-corrida.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -30,6 +31,7 @@ import { LoginModule } from './modules/login/login.module';
     PistaModule,
     PilotoModule,
     CorridaModule,
+    PilotoCorridaModule,
     MenuModule,
   ],
   providers: [],

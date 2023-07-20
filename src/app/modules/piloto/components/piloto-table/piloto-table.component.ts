@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Piloto } from '../../models/piloto';
 import { PilotoService } from '../../services/piloto.service';
 import { PilotoDto } from '../../models/piloto-dto';
 

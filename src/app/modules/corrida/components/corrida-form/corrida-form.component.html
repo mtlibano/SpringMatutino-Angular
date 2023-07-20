@@ -10,7 +10,7 @@
         </div>
 
         <div class="inputBox">
-            <select id="pistas" [(ngModel)]="corridaSelected.pistaId">
+            <select id="pistas" [(ngModel)]="corridaSelected.pista">
                 <option *ngFor="let pista of pistaList" [ngValue]="pista">
                   {{ pista.id }}
                 </option>
@@ -22,7 +22,7 @@
         </div>
 
         <div class="inputBox">
-            <select id="campeonatos" [(ngModel)]="corridaSelected.campeonatoId">
+            <select id="campeonatos" [(ngModel)]="corridaSelected.campeonato">
                 <option *ngFor="let campeonato of campeonatoList" [ngValue]="campeonato">
                   {{ campeonato.descricao }}
                 </option>

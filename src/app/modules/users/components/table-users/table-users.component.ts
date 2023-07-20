@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserServiceService } from '../../services/user-service.service';
 import { User } from '../../models/user';
+import { GlobalService } from '../../../../global.service';
 
 @Component({
   selector: 'app-table-users',
@@ -10,9 +11,17 @@ import { User } from '../../models/user';
 export class TableUsersComponent implements OnInit {
   list: User[] = [];
 
-  constructor(private service: UserServiceService) {}
+  constructor(
+    private service: UserServiceService,
+    private globalService: GlobalService
+  ) {}
 
   ngOnInit(): void {
+    // this.globalService.getToken('max@email.com', '1234').subscribe(() => {
+    //   this.service.listAll().subscribe((data) => {
+    //     this.list = data;
+    //   });
+    // });
     this.service.listAll().subscribe((data) => {
       this.list = data;
     });

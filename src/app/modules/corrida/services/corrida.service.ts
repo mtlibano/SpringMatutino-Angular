@@ -2,6 +2,7 @@ import { EventEmitter, Injectable } from '@angular/core';
 import { Corrida } from '../models/corrida';
 import { Observable, Subject, tap } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { CorridaDto } from '../models/corrida-dto';
 
 @Injectable({
   providedIn: 'root',
@@ -10,7 +11,7 @@ export class CorridaService {
   public emitCorrida = new EventEmitter();
   public updateTableEvent = new EventEmitter();
   private urlBase: string = 'http://localhost:8080/corrida';
-  private corridasSubject = new Subject<Corrida[]>();
+  private corridasSubject = new Subject<CorridaDto[]>();
 
   private httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
@@ -18,9 +19,9 @@ export class CorridaService {
 
   constructor(private http: HttpClient) {}
 
-  insert(corrida: Corrida): Observable<Corrida> {
+  insert(corrida: CorridaDto): Observable<CorridaDto> {
     return this.http
-      .post<Corrida>(this.urlBase, JSON.stringify(corrida), this.httpOptions)
+      .post<CorridaDto>(this.urlBase, JSON.stringify(corrida), this.httpOptions)
       .pipe(
         tap(() => {
           this.listAll();
@@ -28,9 +29,9 @@ export class CorridaService {
       );
   }
 
-  update(corrida: Corrida): Observable<Corrida> {
+  update(corrida: CorridaDto): Observable<CorridaDto> {
     return this.http
-      .put<Corrida>(
+      .put<CorridaDto>(
         `${this.urlBase}/${corrida.id}`,
         JSON.stringify(corrida),
         this.httpOptions
@@ -42,42 +43,42 @@ export class CorridaService {
       );
   }
 
-  delete(corrida: Corrida): Observable<void> {
+  delete(corrida: CorridaDto): Observable<void> {
     return this.http.delete<void>(`${this.urlBase}/${corrida.id}`);
   }
 
-  listAll(): Observable<Corrida[]> {
+  listAll(): Observable<CorridaDto[]> {
     this.http
-      .get<Corrida[]>(this.urlBase)
+      .get<CorridaDto[]>(this.urlBase)
       .subscribe((corridas) => this.corridasSubject.next(corridas));
     return this.corridasSubject.asObservable();
   }
 
-  getByData(data: string): Observable<Corrida[]> {
+  getByData(data: string): Observable<CorridaDto[]> {
     let url = `${this.urlBase}/data/${data}`;
     this.http
-      .get<Corrida[]>(url)
+      .get<CorridaDto[]>(url)
       .subscribe((corridas) => this.corridasSubject.next(corridas));
     return this.corridasSubject.asObservable();
   }
 
-  getByPista(id: number): Observable<Corrida[]> {
+  getByPista(id: number): Observable<CorridaDto[]> {
     let url = `${this.urlBase}/pista/${id}`;
     this.http
-      .get<Corrida[]>(url)
+      .get<CorridaDto[]>(url)
       .subscribe((corridas) => this.corridasSubject.next(corridas));
     return this.corridasSubject.asObservable();
   }
 
-  getByCampeonato(id: number): Observable<Corrida[]> {
+  getByCampeonato(id: number): Observable<CorridaDto[]> {
     let url = `${this.urlBase}/campeonato/${id}`;
     this.http
-      .get<Corrida[]>(url)
+      .get<CorridaDto[]>(url)
       .subscribe((corridas) => this.corridasSubject.next(corridas));
     return this.corridasSubject.asObservable();
   }
 
-  getCorridaForm(corrida: Corrida): void {
+  getCorridaForm(corrida: CorridaDto): void {
     this.emitCorrida.emit(corrida);
   }
 }

@@ -1,8 +1,9 @@
+import { Campeonato } from '../../campeonato/models/campeonato';
+import { Pista } from '../../pista/models/pista';
+
 export interface Corrida {
   id: number;
   data: string;
-  pistaId: number;
-  pistaTamanho: number;
-  campeonatoId: number;
-  campeonatoDescricao: string;
+  pista: Pista;
+  campeonato: Campeonato;
 }

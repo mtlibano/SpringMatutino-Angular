@@ -8,6 +8,7 @@ import { PistaComponent } from './modules/pista/components/pista/pista.component
 import { PilotoComponent } from './modules/piloto/components/piloto/piloto.component';
 import { CorridaComponent } from './modules/corrida/components/corrida/corrida.component';
 import { LoginComponent } from './modules/login/components/login/login.component';
+import { PilotoCorridaComponent } from './modules/piloto-corrida/components/piloto-corrida/piloto-corrida.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -18,6 +19,7 @@ const routes: Routes = [
   { path: 'pista', component: PistaComponent },
   { path: 'piloto', component: PilotoComponent },
   { path: 'corrida', component: CorridaComponent },
+  { path: 'piloto-corrida', component: PilotoCorridaComponent },
   { path: '**', redirectTo: '/login' },
 ];
 
