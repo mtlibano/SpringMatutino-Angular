@@ -1,0 +1,19 @@
+<div class="container">
+    <table>
+        <tr class="titulo">
+            <td>Nome</td>
+            <td>Equipe</td>
+            <td>País</td>
+            <td>Ações</td>
+        </tr>
+        <tr class="dados" *ngFor="let piloto of list">            
+            <td>{{ piloto.name }}</td>
+            <td>{{ piloto.nameEquipe }}</td>
+            <td>{{ piloto.namePais }}</td>
+            <td class="td-btn">
+                <button (click)="getPilotoForm(piloto)">Up</button>
+                <button (click)="delete(piloto)">Del</button>
+            </td>
+        </tr>
+    </table>
+</div>

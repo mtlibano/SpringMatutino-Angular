@@ -1,0 +1,19 @@
+<div class="container">
+    <table>
+        <tr class="titulo">
+            <td>Data</td>
+            <td>Pista</td>
+            <td>Campeonato</td>
+            <td>Ações</td>
+        </tr>
+        <tr class="dados" *ngFor="let corrida of list">            
+            <td>{{ corrida.data }}</td>
+            <td>{{ corrida.pistaId }}</td>
+            <td>{{ corrida.campeonatoDescricao }}</td>
+            <td class="td-btn">
+                <button (click)="getCorridaForm(corrida)">Up</button>
+                <button (click)="delete(corrida)">Del</button>
+            </td>
+        </tr>
+    </table>
+</div>

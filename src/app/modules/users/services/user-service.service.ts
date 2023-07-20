@@ -3,16 +3,13 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, Subject, of } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
 import { User } from '../models/user';
-import { GlobalService } from '../../../global.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class UserServiceService {
-  // public emitEvent = new EventEmitter();
   public emitUser = new EventEmitter();
   public updateTableEvent = new EventEmitter();
-  // list: User[] = [];
   private urlBase: string = 'http://localhost:8080/usuarios';
   private usersSubject = new Subject<User[]>();
 
@@ -25,7 +22,7 @@ export class UserServiceService {
     responseType: 'text' as 'json',
   };
 
-  constructor(private http: HttpClient, private globalService: GlobalService) {}
+  constructor(private http: HttpClient) {}
 
   insert(user: User): Observable<User> {
     return this.http
@@ -59,7 +56,6 @@ export class UserServiceService {
     let httpOptions3 = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
-        Authorization: token,
       }),
     };
     this.http
@@ -75,23 +71,6 @@ export class UserServiceService {
       .subscribe((users) => this.usersSubject.next(users));
     return this.usersSubject.asObservable();
   }
-
-  // getUsers(): Observable<User[]> {
-  //   let url = `http://localhost:8080/usuarios`;
-  //   return this.http.get<User[]>(url);
-  // }
-
-  // getUserName(name: string): Observable<User[]> {
-  //   let url = `http://localhost:8080/usuarios/name-list/${name}`;
-  //   return this.http.get<User[]>(url);
-  // }
-
-  // loadUsersByName(name: string): void {
-  //   this.getUserName(name).subscribe((users: User[]) => {
-  //     this.list = users;
-  //   });
-  //   this.emitEvent.emit(this.list);
-  // }
 
   getUserForm(user: User): void {
     this.emitUser.emit(user);

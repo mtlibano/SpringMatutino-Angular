@@ -11,6 +11,9 @@ import { PaisModule } from './modules/pais/pais.module';
 import { EquipeModule } from './modules/equipe/equipe.module';
 import { CampeonatoModule } from './modules/campeonato/campeonato.module';
 import { PistaModule } from './modules/pista/pista.module';
+import { PilotoModule } from './modules/piloto/piloto.module';
+import { CorridaModule } from './modules/corrida/corrida.module';
+import { LoginModule } from './modules/login/login.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -19,11 +22,14 @@ import { PistaModule } from './modules/pista/pista.module';
     AppRoutingModule,
     HttpClientModule,
     HomeModule,
+    LoginModule,
     UsersModule,
     PaisModule,
     EquipeModule,
     CampeonatoModule,
     PistaModule,
+    PilotoModule,
+    CorridaModule,
     MenuModule,
   ],
   providers: [],

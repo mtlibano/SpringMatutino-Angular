@@ -1,0 +1,123 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+    //background-image: url(../../assets/images/North-Wolf.png);
+    //background-repeat: no-repeat;
+    //background-size: cover;
+    //background-position: center;
+}
+
+.form-box {
+    position: relative;
+    width: 400px;
+    height: 450px;
+    background-color: #ffffff81;
+    backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid rgb(51, 51, 51);
+    border-radius: 15px;
+}
+
+h2 {
+    font-size: 40px;
+    color: #1e3643;
+    text-align: center;
+}
+
+.input {
+    position: relative;
+    margin: 40px 0;
+    width: 310px;
+    border-bottom: 2px solid #1e3643;
+}
+
+.input label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    color: #1e3643;
+    font-size: 16px;
+    pointer-events: none;
+    transition: 0.3s;
+}
+
+input:focus ~ label,
+input:valid ~ label {
+    top: -5px;
+}
+
+.input input {
+    width: 100%;
+    height: 50px;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 20px;
+    padding: 0 35px 0 5px;
+    color: #1e3643;
+}
+
+.forget {
+    margin: -15px 0 15px;
+    font-size: 12px;
+    color: #1e3643;
+    display: flex;
+    justify-content: space-between;
+}
+
+.forget label input {
+    margin-right: 3px;
+}
+
+.forget a {
+    color: #1e3643;
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+button {
+    width: 100%;
+    height: 40px;
+    border-radius: 40px;
+    background-color: #1e3643;
+    color: #fff;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 20px;
+    transition: 0.15s;
+
+    &:hover {
+        background-color: #fff;
+        color: #1e3643;
+        border: 1px solid #1e3643;
+    }
+}
+
+.register {
+    font-size: 14px;
+    color: #1e3643;
+    text-align: center;
+    margin: 25px 0 10px;
+}
+
+.register p a {
+    text-decoration: none;
+    color: #1e3643;
+    font-weight: 600;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}

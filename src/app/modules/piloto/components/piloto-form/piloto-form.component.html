@@ -1,0 +1,39 @@
+<div class="container">
+    <div class="form">
+        <h1>Piloto</h1>
+        <div class="inputBox">
+            <input type="text" id="name" [(ngModel)]="pilotoSelected.name" #inputName>            
+            <span>Nome</span>
+            <button class="btnSearch" (click)="getByName()">
+                <img src="../../../../../assets/icons/search-icon.svg" alt="" />
+            </button>
+        </div>
+
+        <div class="inputBox">
+            <select id="equipes" [(ngModel)]="pilotoSelected.equipe">
+                <option *ngFor="let equipe of equipeList" [ngValue]="equipe">
+                  {{ equipe.name }}
+                </option>
+            </select>
+            <span>Equipe</span>
+            <button class="btnSearch" (click)="getByEquipe()">
+                <img src="../../../../../assets/icons/search-icon.svg" alt="" />
+            </button>
+        </div>
+
+        <div class="inputBox">
+            <select id="paises" [(ngModel)]="pilotoSelected.pais">
+                <option *ngFor="let pais of paisList" [ngValue]="pais">
+                  {{ pais.name }}
+                </option>
+            </select>
+            <span>País</span>
+            <button class="btnSearch" (click)="getByPais()">
+                <img src="../../../../../assets/icons/search-icon.svg" alt="" />
+            </button>
+        </div>
+
+        <button class="btnSalvar" (click)="createPista()">Salvar</button>        
+
+    </div>
+</div>

@@ -1,0 +1,40 @@
+<div class="container">
+    <div class="form">
+        <h1>Corrida</h1>
+        <div class="inputBox">
+            <input type="date" id="data" [(ngModel)]="corridaSelected.data">            
+            <span>Data</span>
+            <button class="btnSearch" (click)="getByData()">
+                <img src="../../../../../assets/icons/search-icon.svg" alt="" />
+            </button>
+        </div>
+
+        <div class="inputBox">
+            <select id="pistas" [(ngModel)]="corridaSelected.pistaId">
+                <option *ngFor="let pista of pistaList" [ngValue]="pista">
+                  {{ pista.id }}
+                </option>
+            </select>
+            <span>Pista</span>
+            <button class="btnSearch" (click)="getByPista()">
+                <img src="../../../../../assets/icons/search-icon.svg" alt="" />
+            </button>
+        </div>
+
+        <div class="inputBox">
+            <select id="campeonatos" [(ngModel)]="corridaSelected.campeonatoId">
+                <option *ngFor="let campeonato of campeonatoList" [ngValue]="campeonato">
+                  {{ campeonato.descricao }}
+                </option>
+            </select>
+            <span>Campeonato</span>
+            <button class="btnSearch" (click)="getByCampeonato()">
+                <img src="../../../../../assets/icons/search-icon.svg" alt="" />
+            </button>
+        </div>
+
+        <button class="btnSalvar" (click)="createPista()">Salvar</button>        
+
+    </div>
+</div>
+

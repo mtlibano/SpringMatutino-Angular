@@ -16,10 +16,6 @@ export class TableUsersComponent implements OnInit {
     this.service.listAll().subscribe((data) => {
       this.list = data;
     });
-
-    // this.service.emitEvent.subscribe((user) => {
-    //   this.list = user;
-    // });
   }
 
   getUserForm(user: User) {
@@ -28,7 +24,7 @@ export class TableUsersComponent implements OnInit {
 
   delete(user: User) {
     this.service.delete(user).subscribe(() => {
-      this.service.listAll(this.token).subscribe((data) => {
+      this.service.listAll().subscribe((data) => {
         this.list = data;
       });
     });
