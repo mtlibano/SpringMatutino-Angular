@@ -1,1 +1,39 @@
-<p>piloto-corrida-form works!</p>
+<div class="container">
+    <div class="form">
+        <h1>Piloto-Corrida</h1>
+        <div class="inputBox">
+            <input type="text" id="colocacao" [(ngModel)]="pilotoCorridaSelected.colocacao">            
+            <span>Colocação</span>
+            <button class="btnSearch" (click)="getByColocacao()">
+                <img src="../../../../../assets/icons/search-icon.svg" alt="" />
+            </button>
+        </div>
+
+        <div class="inputBox">
+            <select id="pilotos" [(ngModel)]="pilotoCorridaSelected.piloto">
+                <option *ngFor="let piloto of pilotoList" [ngValue]="piloto">
+                  {{ piloto.name }}
+                </option>
+            </select>
+            <span>Piloto</span>
+            <button class="btnSearch" (click)="getByPiloto()">
+                <img src="../../../../../assets/icons/search-icon.svg" alt="" />
+            </button>
+        </div>
+
+        <div class="inputBox">
+            <select id="corridas" [(ngModel)]="pilotoCorridaSelected.corrida">
+                <option *ngFor="let corrida of corridaList" [ngValue]="corrida">
+                  {{ corrida.id }}
+                </option>
+            </select>
+            <span>Corrida</span>
+            <button class="btnSearch" (click)="getByCorrida()">
+                <img src="../../../../../assets/icons/search-icon.svg" alt="" />
+            </button>
+        </div>
+
+        <button class="btnSalvar" (click)="createPilotoCorrida()">Salvar</button>        
+
+    </div>
+</div>

@@ -65,8 +65,7 @@ export class PilotoFormComponent implements OnInit {
     this.service.update(pilotoMapper).subscribe();
   }
 
-  createPista() {
-    console.log(this.pilotoSelected);
+  createPiloto() {
     if (this.pilotoSelected.id) {
       this.update();
     } else {

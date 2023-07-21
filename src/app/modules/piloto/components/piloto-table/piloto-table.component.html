@@ -11,8 +11,12 @@
             <td>{{ piloto.nameEquipe }}</td>
             <td>{{ piloto.namePais }}</td>
             <td class="td-btn">
-                <button (click)="getPilotoForm(piloto)">Up</button>
-                <button (click)="delete(piloto)">Del</button>
+                <button (click)="getPilotoForm(piloto)">
+                    <img src="../../../../../assets/icons/edit-icon.png" alt="" />
+                </button>
+                <button (click)="delete(piloto)">
+                    <img src="../../../../../assets/icons/trash-icon.png" alt="" />
+                </button>
             </td>
         </tr>
     </table>
